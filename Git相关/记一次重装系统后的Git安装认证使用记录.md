@@ -58,7 +58,7 @@ ssh: connect to host github.com port 22: Connection refused
 
 有尝试过以"git" "ssh" "代理"为关键词搜索内容, 多次尝试后目前可用的解决方法如下
 
-生成ssh秘钥的".ssh"文件夹下新建一个无扩展名的"Config"文件
+生成ssh秘钥的".ssh"文件夹下新建一个无扩展名的"config"文件
 
 内部填写如下内容
 
@@ -82,3 +82,15 @@ User git
 填写Yes回车, 最后返回访问正常的信息
 
 再次测试GitExtension和Github客户端的推送功能, 这次推送成功.
+
+
+## 第二次编辑
+
+根据测试,".ssh"文件夹下config文件可以起效的最小内容如下
+
+```bash
+Host github.com
+Hostname ssh.github.com
+```
+
+由此可知这里的问题可能并不是在端口......坏了现在更疑惑了
