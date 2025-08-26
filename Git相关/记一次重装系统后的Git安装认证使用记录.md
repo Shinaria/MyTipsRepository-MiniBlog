@@ -93,4 +93,6 @@ Host github.com
 Hostname ssh.github.com
 ```
 
-由此可知这里的问题可能并不是在端口......坏了现在更疑惑了
+由此可知这里的问题可能并不是在端口......
+
+总之现在感觉如果需要使用Github上的Repository的话还是直接走Github的客户端更方便点......GUI万岁!(
