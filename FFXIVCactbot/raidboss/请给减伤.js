@@ -5,8 +5,8 @@ Options.Triggers.push({
         {
           id: 'MatchAll Addle',
           regex: /^昏乱/,
-          condition: function (data) { return data.job === 'RDM'||data.job === 'SMN'||data.job === 'PCT' },
-          tts: '昏乱',
+          condition: function (data) { return data.job === 'RDM'||data.job === 'SMN'||data.job === 'BLM'||data.job === 'PCT' },
+          tts: '昏乱昏乱',
           alertText: '昏乱',
         },
         {
@@ -14,14 +14,14 @@ Options.Triggers.push({
           regex: /^抗死/,
           condition: function (data) { return data.job === 'RDM'||data.job === 'PCT' },
           alertText: '抗死',
-          tts: '抗死',
+          tts: '抗死抗死',
         },
         {
           id: 'MatchAll Tactician',
           regex: /^策动/,
           condition: function (data) { return data.job === 'MCH'||data.job === 'DNC'||data.job === 'BRD' },
           alertText: '策动',
-          tts: '策动',
+          tts: '策动策动',
         },
         {
           id: 'MatchAll Dismantle',
