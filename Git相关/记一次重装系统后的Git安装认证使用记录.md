@@ -6,7 +6,7 @@
 
 重装后安装git和相关GUI软件, 添加认证秘钥时也出现了一些坑, 故记录于此
 
-1.尝试安装Git=> 安装Winget后安装Git
+### 1.尝试安装Git=> 安装Winget后安装Git
 
 按往常习惯是走官网下载exe(还是msi?总之是安装包), 今天看官网的时候发现可以尝试用Winget安装Git
 
@@ -26,7 +26,7 @@ Install-Script winget-install -Force   //在PowerShell内运行
 
 运行结束后Git安装完毕, 开始菜单出现Git相关的文件夹.
 
-2.安装GUI
+### 2.安装GUI
 
 因为之前有需要传非Github平台的Git的需求, 所以用的GitExtension, 但是现在想试试Github自己出的客户端, 于是乎就主页下载了.
 
@@ -34,7 +34,7 @@ Install-Script winget-install -Force   //在PowerShell内运行
 
 暂时搁置Github出的这个客户端, 我安装GitExtension后按老方式生成并上传SSH秘钥, 菜单内插件Github选项添加个人秘钥, 但是提示远端禁止访问
 
-3.解决远端禁止访问的问题
+### 3.解决远端禁止访问的问题
 
 按照网络上的测试方法, 在Git Bash内执行如下指令
 
@@ -95,4 +95,50 @@ Hostname ssh.github.com
 
 由此可知这里的问题可能并不是在端口......现在我就是十分甚至九分的疑惑
 
-总之现在感觉如果需要使用Github上的Repository的话还是直接走Github的客户端更方便点......GUI万岁!(
+总之现在感觉如果需要使用Github上的Repository的话还是直接走Github的客户端更方便点......GUI万岁!(?
+
+## 第三次编辑
+
+思考了一下上面的最小生效的Config内容, 我猜想起效的原因是github.com和ssh.github.com的解析地址不同
+
+于是我决定ping一下两个网址, 然后发现github.com解析的ip是本地(毕竟我开了加速工具), ssh.github.com的解析地址就是原本的ip地址
+
+而且大陆网络环境访问github确实没有那么好, 所以还是决定直接把github相关的全走代理.
+
+以"github ssh 走代理"为关键字搜索到一篇知乎文章, 我重新获取了一个config文件, 经测试有效
+
+```bash
+ProxyCommand "C:\Program Files\Git\mingw64\bin\connect" -S 127.0.0.1:7777 -a none %h %p
+
+Host github.com
+  User git
+  Port 22
+  Hostname github.com
+  IdentityFile "C:\Users\UserName\.ssh\id_rsa"
+  TCPKeepAlive yes
+
+Host ssh.github.com
+  User git
+  Port 443
+  Hostname ssh.github.com
+  IdentityFile "C:\Users\UserName\.ssh\id_rsa"
+  TCPKeepAlive yes
+```
+
+可以说这个config文件内的设置配置非常齐全, 内部文件地址字符按需修改即可, 放在这里作为存档
+
+需要注意的是"ProxyCommand"这条指令, 此前的尝试中我也有尝试或类似指令但是并未成功. 这篇文章给出的答案是这个
+
+```bash
+对于windows用户，代理会用到connect.exe
+```
+
+而mac用户的ProxyCommand并没有需要提供这个connect.exe的地址,可能是之前搜索的内容没有提到这一点.
+
+最后经删改测试, 这一次的解决方案的最小config文件仅有一行, 而且也就是之前屡次报错的ProxyCommand指令(阿这)
+
+```bash
+ProxyCommand "C:\Program Files\Git\mingw64\bin\connect" -S 127.0.0.1:7777 -a none %h %p
+```
+
+应该暂时不用更新了?
