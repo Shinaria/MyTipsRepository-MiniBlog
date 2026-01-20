@@ -48,8 +48,8 @@ do { } while (condition);
 * 增强型for循环
 
 ```java
-String [] names ={"James", "Larry", "Tom", "Lacy"};
-for( String name : names ) {
+String[] nameArray ={"James", "Larry", "Tom", "Lacy"};
+for( String name : nameArray ) {
     System.out.print( name );
     System.out.print(",");
 }
@@ -95,24 +95,100 @@ public class FreshJuiceTest {
 }
 ```
 
+## 数组和Arrays类
+
+### 声明数组变量
+
+```java
+dataType[] arrayA;   //推荐这个
+dataType arrayB[];
+```
+
+### 创建数组
+
+```java
+arrayC = new dataType[arraySizeInt];
+dataType[] arrayD = new dataType[arraySizeInt];
+dataType[] arrayE = {value0, value1, value2};
+```
+
+### Arrays类
+
+* 提供方法操作数组变量
+
+```java
+public static void fill(int[] a, int val)
+public static void sort(Object[] a) 
+public static int binarySearch(Object[] a, Object key)
+public static boolean equals(long[] a, long[] a2)
+```
+
+## ArrayList类
+
+* 和数组相比没有固定大小的限制.
+* 需要import
+
+```java
+import java.util.ArrayList; // 引入 ArrayList 类
+```
+
+### 初始化
+
+* 以下出现的泛型E必须是引用数据类型
+* 因为ArrayList里面存的东西本质是对象而不是变量
+* 举例想存int类型的变量就得写Integer
+
+```java
+ArrayList<E> arrayListA =new ArrayList<E>();　 // 初始化
+```
+
+### 增删改查
+
+* ArrayList不能用中括号下标直接随机访问,必须使用get()和set().
+
+```java
+ArrayList<String> sites = new ArrayList<String>();
+sites.add("Google");
+sites.add("Bing");
+sites.add("Bai");
+sites.set(2,"Baidu");
+sites.remove(1);
+String site = sites.get(1);
+```
+
+### 常见操作
+
+* 需要引入Collections类
+
+```java
+import java.util.Collections;
+
+Collections.sort(sites);
+sites.sort(Comparator.naturalOrder());也是排序
+int size = sites.size();
+
+```
+
 ## Math类
 
 ```java
-Math.min(a,b);
-Math.max(a,b);
-Math.sqrt(a);
+Math.min(intA,intB);
+Math.max(intA,intB);
+Math.sqrt(intA);
 ```
 
-## Character类
+## Character类(用于对单个字符进行操作)
 
 ```java
 char c = Character.toUpperCase('a');
 boolean b = Character.isDigit('c');
 ```
 
-## String类
+## String(字符串相关)
 
-### 构造(新建)String类
+### String类
+
+#### 构造(新建)String类
 
 ```java
 String s1 = "Runoob";              // String 直接创建
@@ -121,9 +197,9 @@ String s3 = s1;                    // 相同引用,s1 s2 s3指向公共池(意�
 String s4 = new String("Runoob");   // String 对象创建,单独存在,不同于s1 s2 s3
 ```
 
-* String类不能直接改
+* String类不可直接改变内部值
 
-### String类常用操作
+#### String类常用操作
 
 * String类常用方法
 
@@ -147,4 +223,26 @@ Str2 = Str2.copyValueOf( Str1 );
 
 //String 转char[]
 char[] charArray = s.toCharArray();
+```
+
+### StringBuffer和StringBuilder类
+
+* 修改字符串可以用到这两个类
+* StringBuilder更快,StringBuffer支持线程安全
+
+#### 构造(以StringBuffer为例)
+
+```java
+StringBuffer sBufferA = new StringBuffer(intLength);
+StringBuffer sBufferB = new StringBuffer("a string");
+```
+
+#### 举例方法()
+
+```java
+StringBuilder sb = new StringBuilder(10);
+sb.append("Runoob..");
+sb.append("!");
+sb.insert(8, "Java");
+sb.delete(5,8);
 ```
