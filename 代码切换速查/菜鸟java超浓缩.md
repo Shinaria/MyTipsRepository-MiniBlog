@@ -2,6 +2,13 @@
 
 ## 基础语法
 
+### Java常用导入包
+
+```java
+import java.util.Arrays;
+import java.util.*;  //*通配符
+```
+
 ### Java注释
 
 ```java
@@ -180,8 +187,8 @@ Math.sqrt(intA);
 ## Character类(用于对单个字符进行操作)
 
 ```java
-char c = Character.toUpperCase('a');
-boolean b = Character.isDigit('c');
+char c = Character.toUpperCase('a');   //转大写
+boolean b = Character.isDigit('c');    //字符是不是数字
 ```
 
 ## String(字符串相关)
@@ -206,7 +213,7 @@ String s4 = new String("Runoob");   // String 对象创建,单独存在,不同�
 ```java
 String s = "www.runoob.com";
 
-//String类支持的方法
+//String类支持的方法举例
 int length = s.length();
 char result = s.charAt(6);
 boolean retVal = s.endsWith( "com" );
@@ -245,4 +252,55 @@ sb.append("Runoob..");
 sb.append("!");
 sb.insert(8, "Java");
 sb.delete(5,8);
+```
+
+## 数组
+
+### 声明和创建数组
+
+```java
+double[] aDoubleArray;   //声明数组变量
+aDoubleArray = new double[100]   //创建长度100的数组
+int[] aIntArray = new int[50]
+int[] anotherIntArray = new int{0,1,2,3};//其他几种创建数组的方式;
+```
+
+### 一些常见的操作数组的方式
+
+```java
+import java.util.Arrays;
+
+Arrays.fill(aIntArray,5);  //填充数组
+Arrays.sort(aIntArray,2,7);   //对数组内2到6的数组排序,默认从小到大排
+```
+
+## ArrayList
+
+* 如何导入和初始化
+
+```java
+import java.util.ArrayList; // 引入 ArrayList 类
+
+ArrayList<E> anArrayList =new ArrayList<>();  // 初始化,<E>的E是引用数据类型, 开头大写的那些
+```
+
+* 因为ArrayList 中的元素实际上是对象,所以E如果想用int,double这些类型, 必须是基本类型的包装类.
+
+### ArrayList的常见操作方式
+
+```java
+anArrayList.add(object); //末尾添加object
+anArrayList.remove(4);   //移除第5个元素
+Object aObject = anArrayList.get(1); //获取第2个元素
+anArrayList.set(2,object); //修改第3个元素为object
+int length = anArrayList.size();  //获取元素数量
+ArrayList<String> anotherList = (ArrayList<String>)aStringList.clone();//拷贝,但是浅拷贝
+anArrayList.toArray(anArray);//建议使用带参数的toArray(),不传参的话会返回Object[]
+```
+
+### ArrayList的排序
+
+```java
+import java.util.Collections; // 需要引入Collections类
+Collections.sort(anArrayList);
 ```
