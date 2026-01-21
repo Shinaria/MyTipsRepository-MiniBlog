@@ -1,39 +1,47 @@
-# java菜鸟教程超浓缩
+# go菜鸟教程超浓缩
 
 ## 基础语法
 
-### Java常用导入包
+* 首行需要声明本文件代码属于哪个包
+* 左大括号不能单独一行
+* 分行不用分号做末尾
 
-```java
-import java.util.Arrays;
-import java.util.*;  //*通配符
+```go
+package main   //这是一个可独立执行的文件代码
 ```
 
-### Java注释
+### 导入包
 
-```java
-/* 
-这是一个
-多行注释的示例
-*/
-// 这是单行注释的示例
-/* 这个也是单行注释的示例 */
+```go
+import "fmt"   //fmt包用于格式化输入输出
+```
 
+### Go函数格式
+
+```go
+func function_name( [parameter list] ) [return_types] {
+   函数体
+}
 ```
 
 ### 基本数据类型
 
-```java
-boolean bool;
-byte by;
-char ch;
-double d;
-float f;
-int i;
-long l;
-short sh;
-String str;//这个其实是个类,不是变量
+```go
+
 ```
+
+### 声明变量&初始化&赋值
+
+```go
+var a string = "string"
+var b, c int = 1, 2
+var d int
+a, b, c, d = "STRING", 2, 3, 4
+var e = 5.6 //会自动判定变量e的类型
+f := false //跟上面一行类似, 但不可用于全局变量的声明和赋值
+```
+
+* 局部变量被声明后必须被使用,只赋值也不行.
 
 ### 访问控制修饰符
 
@@ -44,69 +52,61 @@ public int c;
 int d;
 ```
 
-### 循环
+### 循环的几种写法
 
-```java
-for (int i = 0; i < 10; i++) { }
-while (condition) { }
-do { } while (condition);
-```
-
-* 增强型for循环
-
-```java
-String[] nameArray ={"James", "Larry", "Tom", "Lacy"};
-for( String name : nameArray ) {
-    System.out.print( name );
-    System.out.print(",");
+```go
+for i := 0; i <= 10; i++ {
+   sum += i
 }
+
+sum := 1
+for ; sum <= 10; {
+   sum += sum
+}
+
+for sum <= 10{
+   sum += sum
+}
+
 ```
 
 ### 条件判断
 
-```java
-if (condition) { }
-else if (condition) { }
-else { }
+```go
+var a int = 25
+if a == 25 {
+   //code
+} else if a < 25 {
+   //code
+} else {
+   //code
+}
 ```
 
 * switch case语句
+* case匹配成功后执行完直接跳出, 不用写break
 
-```java
-int i = 1;
-switch(i){
-    case 0:
-    System.out.println("0"); break;
-    case 1:
-    System.out.println("1"); break;
-    default:
-    System.out.println("default");
-}
-```
+```go
+var grade string = "B"
+var marks int = 90
 
-### Java枚举
-
-* 例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁。
-
-```java
-class FreshJuice {
-   enum FreshJuiceSize{ SMALL, MEDIUM , LARGE }
-   FreshJuiceSize size;
-}
- 
-public class FreshJuiceTest {
-   public static void main(String[] args){
-      FreshJuice juice = new FreshJuice();
-      juice.size = FreshJuice.FreshJuiceSize.MEDIUM  ;
-   }
+switch marks {
+   case 90: grade = "A"
+   case 80: grade = "B"
+   case 50,60,70 : grade = "C"   //多条件匹配
+   default: grade = "D"  
 }
 ```
 
 ### 声明数组变量
 
-```java
-dataType[] arrayA;   //推荐这个
-dataType arrayB[];
+```go
+var array_name [size]dataType
+var int_numbersA = [5]int
+var int_numbersB = [5]int{1, 2, 3, 4, 5}
+int_numbersC := [5]int{1, 2, 3, 4, 5}
+int_numbersD := [...]int{1, 2, 3}
+int_numbersE := [5]int{1:3,3:7}
 ```
 
 ### 创建数组
