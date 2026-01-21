@@ -27,7 +27,13 @@ func function_name( [parameter list] ) [return_types] {
 ### 基本数据类型
 
 ```go
-
+bool
+int
+uint
+float32
+byte
+rune
+string
 ```
 
 ### 声明变量&初始化&赋值
