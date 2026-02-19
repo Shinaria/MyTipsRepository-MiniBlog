@@ -11,10 +11,14 @@
             "id": "3a0d1ba5b1c4389d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "随记/github-PermissionDenied(publickey).md",
+                "bFile": "随记/github-PermissionDenied(publickey).md",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: github-PermissionDenied(publickey)  (Working Tree)"
             }
           }
         ]
@@ -191,8 +195,10 @@
   "active": "3a0d1ba5b1c4389d",
   "lastOpenFiles": [
     "随记/Github远程推送-SSH秘钥证书添加.md",
-    "随记/常用linux指令之怎么记.md",
+    "随记/Windows的系统保留端口.md",
+    "随记/github-PermissionDenied(publickey).md",
     "随记/记一次重装系统后的Git安装认证使用记录.md",
+    "随记/常用linux指令之怎么记.md",
     "一日胡思/每日N句.md",
     "一日胡思/句子收藏.md",
     "一日胡思/发散思考.md",
