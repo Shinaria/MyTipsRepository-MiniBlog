@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "一日胡思/发散思考.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "发散思考"
             }
           }
         ]
@@ -194,6 +194,7 @@
   },
   "active": "e996d68b9cc19013",
   "lastOpenFiles": [
+    "README.md",
     "一日胡思/每日N句.md",
     "一日胡思/句子收藏.md",
     "一日胡思/发散思考.md",
