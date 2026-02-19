@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "000000句子收藏.md",
+                "file": "一日胡思/发散思考.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "000000句子收藏"
+              "title": "发散思考"
             }
           }
         ],
@@ -188,6 +188,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
