@@ -1,0 +1,27 @@
+{
+  "mobileToolbarCommands": [
+    "editor:set-heading",
+    "editor:toggle-bullet-list",
+    "editor:toggle-numbered-list",
+    "editor:toggle-bold",
+    "editor:toggle-italics",
+    "editor:toggle-strikethrough",
+    "editor:toggle-highlight",
+    "editor:toggle-code",
+    "editor:toggle-blockquote",
+    "editor:insert-link",
+    "editor:toggle-checklist-status",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "editor:configure-toolbar"
+  ],
+  "livePreview": false,
+  "strictLineBreaks": true,
+  "propertiesInDocument": "visible",
+  "showLineNumber": true,
+  "spellcheck": false,
+  "showIndentGuide": false,
+  "autoPairBrackets": false,
+  "useTab": false,
+  "promptDelete": false
+}

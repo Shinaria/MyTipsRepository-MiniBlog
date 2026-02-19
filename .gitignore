@@ -9,5 +9,4 @@ bin/*
 .kitchen.local.yml
 
 .idea
-.obsidian
 .vscode
