@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e9482f4edb6d0707",
+        "id": "f3738841244fb993",
         "type": "tabs",
         "children": [
           {
-            "id": "3a0d1ba5b1c4389d",
+            "id": "fc05b998b9717c0a",
             "type": "leaf",
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "随记/github-PermissionDenied(publickey).md",
-                "bFile": "随记/github-PermissionDenied(publickey).md",
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: github-PermissionDenied(publickey)  (Working Tree)"
+              "title": "Diff: workspace.json  (Working Tree)"
             }
           }
         ]
@@ -192,17 +192,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3a0d1ba5b1c4389d",
+  "active": "fc05b998b9717c0a",
   "lastOpenFiles": [
-    "随记/Github远程推送-SSH秘钥证书添加.md",
-    "随记/Windows的系统保留端口.md",
-    "随记/github-PermissionDenied(publickey).md",
-    "随记/记一次重装系统后的Git安装认证使用记录.md",
-    "随记/常用linux指令之怎么记.md",
+    "README.md",
+    "FFXIV攻略/绝欧米茄-个人笔记.md",
     "一日胡思/每日N句.md",
     "一日胡思/句子收藏.md",
     "一日胡思/发散思考.md",
-    "README.md",
+    "随记/Windows的系统保留端口.md",
+    "随记/Github远程推送-SSH秘钥证书添加.md",
+    "随记/常用linux指令之怎么记.md",
+    "随记/github-PermissionDenied(publickey).md",
+    "随记/记一次重装系统后的Git安装认证使用记录.md",
     "未命名.base",
     "未命名.canvas",
     "未命名 6.base",
