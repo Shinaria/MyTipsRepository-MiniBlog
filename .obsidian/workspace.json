@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "13d26afaf0c1a6f2",
+        "id": "e9482f4edb6d0707",
         "type": "tabs",
         "children": [
           {
-            "id": "e996d68b9cc19013",
+            "id": "3a0d1ba5b1c4389d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "一日胡思/发散思考.md",
-                "mode": "source",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "发散思考"
+              "title": "新标签页"
             }
           }
         ]
@@ -78,7 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 363.5
   },
   "right": {
     "id": "99cb1d917c783c6d",
@@ -178,7 +174,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 438.5
+    "width": 364.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,12 +188,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e996d68b9cc19013",
+  "active": "3a0d1ba5b1c4389d",
   "lastOpenFiles": [
-    "README.md",
+    "随记/Github远程推送-SSH秘钥证书添加.md",
+    "随记/常用linux指令之怎么记.md",
+    "随记/记一次重装系统后的Git安装认证使用记录.md",
     "一日胡思/每日N句.md",
     "一日胡思/句子收藏.md",
     "一日胡思/发散思考.md",
+    "README.md",
     "未命名.base",
     "未命名.canvas",
     "未命名 6.base",

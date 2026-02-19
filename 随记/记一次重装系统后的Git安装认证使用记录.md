@@ -6,7 +6,7 @@
 
 重装后安装git和相关GUI软件, 添加认证秘钥时也出现了一些坑, 故记录于此
 
-### 1.尝试安装Git=> 安装Winget后安装Git
+## 1.尝试安装Git=> 安装Winget后安装Git
 
 按往常习惯是走官网下载exe(还是msi?总之是安装包), 今天看官网的时候发现可以尝试用Winget安装Git
 
@@ -26,7 +26,7 @@ Install-Script winget-install -Force   //在PowerShell内运行
 
 运行结束后Git安装完毕, 开始菜单出现Git相关的文件夹.
 
-### 2.安装GUI
+## 2.安装GUI
 
 因为之前有需要传非Github平台的Git的需求, 所以用的GitExtension, 但是现在想试试Github自己出的客户端, 于是乎就主页下载了.
 
@@ -34,7 +34,7 @@ Install-Script winget-install -Force   //在PowerShell内运行
 
 暂时搁置Github出的这个客户端, 我安装GitExtension后按老方式生成并上传SSH秘钥, 菜单内插件Github选项添加个人秘钥, 但是提示远端禁止访问
 
-### 3.解决远端禁止访问的问题
+## 3.解决远端禁止访问的问题
 
 按照网络上的测试方法, 在Git Bash内执行如下指令
 
@@ -82,7 +82,6 @@ User git
 填写Yes回车, 最后返回访问正常的信息
 
 再次测试GitExtension和Github客户端的推送功能, 这次推送成功.
-
 
 ## 第二次编辑
 
