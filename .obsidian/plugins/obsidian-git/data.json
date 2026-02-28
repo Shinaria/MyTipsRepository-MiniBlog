@@ -1,6 +1,6 @@
 {
-  "commitMessage": "Obsidian Vault Update: {{date}} {{files}}",
-  "autoCommitMessage": "Auto Obsidian Vault Update: {{date}} {{files}}",
+  "commitMessage": "Obsidian Vault Update: {{date}}",
+  "autoCommitMessage": "Auto Obsidian Vault Update: {{date}}",
   "commitMessageScript": "",
   "commitDateFormat": "YY-MM-DD HH:mm",
   "autoSaveInterval": 0,

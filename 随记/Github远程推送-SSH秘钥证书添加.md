@@ -7,23 +7,18 @@
 
 * 打开Git Bash(Windows系统在开始菜单里面可以找到)
 * 输入命令:
-
 ```c
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-
 * 回车后按需设置密钥文件位置和密码, 多次回车设置完毕后会显示一堆符号组成的矩阵, 这说明本地的密钥生成完毕.
 
 ## 密钥添加至ssh-agent
 
 * Git Bash输入命令启动ssh-agent
-
 ```c
 eval "$(ssh-agent -s)"
 ```
-
 * 然后输入命令, 将秘钥添加到ssh-agent
-
 ```c
 ssh-add ~/.ssh/id_ed25519
 ```
