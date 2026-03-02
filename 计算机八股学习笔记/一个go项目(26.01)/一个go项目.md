@@ -71,13 +71,13 @@
     * 方便文件管理.
 4. 使用Kitex Tool依据我们刚刚写好的`.thrift`文件生成服务代码.
     1. 当前目录下，执行如下命令：
-    ```shell
+    ```bash
     kitex -module module_name path/to/example.thrift
     ```
     2. 执行后在当前目录下会生成一个名为`kitex_gen`目录, 不过还需要再生成服务的脚手架代码.
     3. 进入想要放业务服务代码的文件夹(可新建)
     4. 执行如下命令:
-    ```shell
+    ```bash
     kitex -module module_name -service namespace.in.thrift -use path/to/kitex_gen path/to/example.thrift
     ```
     * 一个`.thrift`文件生成就要RPC代码.
@@ -85,7 +85,6 @@
     * 一份代码需要生成两次.
 5. 回到项目根目录, 执行`go mod tidy`拉取依赖.
 6. 然后进入第二次生成的代码文件夹里面修改handle.go,里面可以看到几个函数, 名字与`.thrift`里面定义的service的名字一样. 这里是负责业务代码的部分.
-7. 
 
 #### 实际执行记录
 
