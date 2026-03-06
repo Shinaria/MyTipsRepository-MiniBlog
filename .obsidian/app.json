@@ -23,5 +23,6 @@
   "showIndentGuide": false,
   "autoPairBrackets": false,
   "useTab": false,
-  "promptDelete": false
+  "promptDelete": false,
+  "readableLineLength": false
 }
