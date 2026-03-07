@@ -10,4 +10,4 @@ bin/*
 
 .idea
 .vscode
-/.obsidian/workspace.json
+/.obsidian/*.json
