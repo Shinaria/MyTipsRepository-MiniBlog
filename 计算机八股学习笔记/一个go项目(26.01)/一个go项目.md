@@ -37,7 +37,7 @@
 * 新建完容器会自动进入容器的命令行(`root@`开头)
 * 然后运行`go install github.com/cloudwego/kitex/tool/cmd/kitex@latest`安装Kitex.
 * 然后运行`go get github.com/kitex-contrib/registry-nacos/v2`安装Narcos.
-* 关闭容器后再打开的指令是`docker start kitex-learning`, 不是`docker run`, `run`是新建(重复)
+* 关闭容器后再打开的指令是`docker start`, 不是`docker run`, `run`是新建(重复)
 
 ### 如何迁移这个容器?
 
@@ -62,80 +62,80 @@ docker run -it --name kitex-learning -v J:\Learning\KitexLearning:/src -w /src k
 # ==========================================
 # 自动化存档脚本 (含缓存清理)
 # ==========================================
-
+  
 # --- 1. 基础配置 (根据你的实际情况修改) ---
-$imageName = "my-kitex-env"        # 镜像的名字
-$containerName = "kitex-dev"       # 你当前正在跑的容器名字
-$versionFile = "J:\Learning\version.txt"  # 记录版本号的小本子
-
+$imageName = "kitex-learning-env"        # 镜像的名字
+$containerName = "kitex-learning"       # 你当前正在跑的容器名字
+$versionFile = "J:\Learning\version.txt"  # 记录版本号的小本子
+  
 # --- 2. 自动获取并增加版本号 ---
 # 如果文件存在就读数字，不存在就从 0 开始
-if (Test-Path $versionFile) { 
-    $v = [int](Get-Content $versionFile) 
-} else { 
-    $v = 0 
+if (Test-Path $versionFile) {
+    $v = [int](Get-Content $versionFile)
+} else {
+    $v = 0
 }
 $newV = $v + 1
 $tag = "v$newV"
-$savePath = "J:\Learning\${imageName}_${tag}.tar"
-
-Write-Host ">>> 准备存档版本: $tag" -ForegroundColor Cyan
-
+$savePath = "J:\Learning\${imageName}-${tag}.tar"
+  
+Write-Host ">>> Ready to save version: $tag" -ForegroundColor Cyan
+  
 # --- 3. 核心：清理 Go 缓存 (瘦身关键) ---
 # 这条指令会进入容器内部，删掉编译产生的临时缓存和下载的旧包
-Write-Host ">>> 正在清理容器内的 Go 缓存..." -ForegroundColor Yellow
+Write-Host ">>> Remove Go Cache in container..." -ForegroundColor Yellow
 docker exec $containerName go clean -cache -modcache
-
+  
 # --- 4. 提交并保存环境 ---
-Write-Host ">>> 正在生成镜像并打包 (这可能需要几分钟)..." -ForegroundColor Cyan
+Write-Host ">>> Generating .tar file (a few minutes)..." -ForegroundColor Cyan
 # commit: 把现在的容器状态“固化”成一个新的镜像
 docker commit $containerName "${imageName}:${tag}"
 # save: 把镜像导出成移动硬盘里的 .tar 文件
 docker save -o $savePath "${imageName}:${tag}"
-
+  
 # --- 5. 更新版本号记录 ---
 $newV | Out-File $versionFile
-Write-Host ">>> 存档成功！文件名: $savePath" -ForegroundColor Green
-Write-Host ">>> 现在可以安全拔掉移动硬盘了。" -ForegroundColor White
+Write-Host ">>> Success! Path: $savePath" -ForegroundColor Green
 ```
 2. 编写复现环境的脚本
 ```PowerShell
 # ==========================================
 # 自动化读档脚本 (环境复现)
 # ==========================================
-
+  
 # --- 1. 基础配置 ---
-$imageName = "my-kitex-env"
-$containerName = "kitex-dev"       # 统一两台电脑的容器名，方便操作
+$imageName = "kitex-learning-env"
+$containerName = "kitex-learning"       # 统一两台电脑的容器名，方便操作
 $versionFile = "J:\Learning\version.txt"
-
+  
 # --- 2. 获取最新版本号 ---
-if (-not (Test-Path $versionFile)) { 
-    Write-Error "错误: 在 J 盘找不到 version.txt，请确认硬盘已正确连接！"
-    exit 
+if (-not (Test-Path $versionFile)) {
+    Write-Error "Error: Can not find version.txt in J:/Learning."
+    exit
 }
 $v = Get-Content $versionFile
 $tag = "v$v"
-$loadPath = "J:\Learning\${imageName}_${tag}.tar"
-
-Write-Host ">>> 准备加载最新版本: $tag" -ForegroundColor Cyan
-
+$loadPath = "J:\Learning\${imageName}-${tag}.tar"
+  
+Write-Host ">>> Load latest version: $tag" -ForegroundColor Cyan
+  
 # --- 3. 导入镜像 ---
 # 把硬盘里的 .tar 包重新加载进电脑的 Docker 仓库
 docker load -i $loadPath
-
+  
 # --- 4. 重置容器 (换上新环境) ---
 # 因：旧容器绑定的是旧镜像 ID，必须删掉重建
-Write-Host ">>> 正在移除旧容器并启动新环境..." -ForegroundColor Yellow
-docker rm -f $containerName  # 强制删除同名旧容器
-
+Write-Host ">>> Remove old containers..." -ForegroundColor Yellow
+docker rm -f $containerName  # 强制删除同名旧容器
+  
+Write-Host ">>> Run new env..." -ForegroundColor Yellow
 # 执行 run: 创建新容器并挂载 J 盘代码
 # -v 参数建立了“传送门”，-w 设置了进门后的起始位置
 docker run -it --name $containerName `
-    -v J:\Learning\KitexLearning:/src `
-    -w /src `
-    "${imageName}:${tag}" /bin/bash
-
+    -v J:\Learning\KitexLearning:/src `
+    -w /src `
+    "${imageName}:${tag}" /bin/bash
+  
 # --- 5. 提示 ---
 # 脚本执行到这里会直接进入容器的命令行
 ```
