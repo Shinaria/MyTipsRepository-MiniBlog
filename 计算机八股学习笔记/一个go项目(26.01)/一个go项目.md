@@ -145,6 +145,25 @@ docker run -it --name $containerName `
 * 听起来很美好, 但是家里网太烂了只能作罢.
 * 但是实际工作用这个方案应该很方便.(公司网太烂感觉不太可能)
 
+### 如何启动容器?
+
+* 使用`docker start`指令
+```bash
+docker start <容器名>
+```
+
+### 如何进入这个容器的命令行?
+
+* 使用`docker exec`指令
+```bash
+docker exec -it <容器名> /bin/bash
+```
+* 也可以把`docker start`和`docker exec`放在一起使用.
+```bash
+docker start <容器名> && docker exec -it <容器名> /bin/bash
+```
+* 中间的`&&`是shell环境的连接符.
+
 ## 示例项目拉取+第一次尝试直接运行
 
 * 项目地址: `https://github.com/cloudwego/kitex-examples.git`
