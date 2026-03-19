@@ -11,3 +11,8 @@ bin/*
 .idea
 .vscode
 /.obsidian/*.json
+
+/.obsidian/app.json
+/.obsidian/workspace-mobile.json
+/.obsidian/app.json
+/.obsidian/workspace-mobile.json
