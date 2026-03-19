@@ -1,66 +1,37 @@
 {
   "main": {
-    "id": "9472cba4fa747e46",
+    "id": "3b5238158d43b913",
     "type": "split",
     "children": [
       {
-        "id": "ecd706f2d9b58f99",
+        "id": "d2e75b29de71a751",
         "type": "tabs",
         "children": [
           {
-            "id": "d7b9a706ea69db12",
+            "id": "86373f2d778b27ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "251204一些集中的想法.md",
+                "file": "一日胡思/每日N句.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "251204一些集中的想法"
-            }
-          },
-          {
-            "id": "233adc8bb73b93ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "251215尝试用其他软件写日记.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "251215尝试用其他软件写日记"
-            }
-          },
-          {
-            "id": "3d0851c29524f059",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "一日胡思/发散思考.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "发散思考"
+              "title": "每日N句"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "967f4de89a21d4ba",
+    "id": "057ca06785dde6a2",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "6343aec88a60e1dd",
+        "id": "9f9da8dea6087403",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -73,7 +44,7 @@
         }
       },
       {
-        "id": "1ed726d27f561391",
+        "id": "2e698c67d7263f83",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -86,11 +57,11 @@
             "sortOrder": "alphabetical"
           },
           "icon": "lucide-search",
-          "title": "Search"
+          "title": "搜索"
         }
       },
       {
-        "id": "4a45d913dd45caf7",
+        "id": "39027fbbbe980575",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -101,11 +72,11 @@
             "searchQuery": ""
           },
           "icon": "lucide-tags",
-          "title": "Tags"
+          "title": "标签"
         }
       },
       {
-        "id": "2d8f548eed4acd14",
+        "id": "cbe990925d9857f1",
         "type": "leaf",
         "state": {
           "type": "all-properties",
@@ -115,33 +86,33 @@
             "searchQuery": ""
           },
           "icon": "lucide-archive",
-          "title": "All properties"
+          "title": "添加笔记属性"
         }
       },
       {
-        "id": "87d2a082449a3ae1",
+        "id": "efa8d89b611e75a3",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
           "state": {},
           "icon": "lucide-bookmark",
-          "title": "Bookmarks"
+          "title": "书签"
         }
       }
     ],
     "currentTab": 0
   },
   "right": {
-    "id": "72b3183497bfbf5c",
+    "id": "eed5e03b51453554",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "5829ea268962ad6d",
+        "id": "4d7199d93cb3d702",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "251215尝试用其他软件写日记.md",
+            "file": "一日胡思/每日N句.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -151,58 +122,89 @@
             "unlinkedCollapsed": true
           },
           "icon": "links-coming-in",
-          "title": "Backlinks"
+          "title": "反向链接"
         }
       },
       {
-        "id": "10d5ccbf644a9bcb",
+        "id": "47632473550a33b1",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "251215尝试用其他软件写日记.md",
+            "file": "一日胡思/每日N句.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
           "icon": "links-going-out",
-          "title": "Outgoing links"
+          "title": "出链"
         }
       },
       {
-        "id": "7b14535a619a8115",
+        "id": "b5a21882b1953b07",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "251215尝试用其他软件写日记.md",
+            "file": "一日胡思/每日N句.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
           },
           "icon": "lucide-list",
-          "title": "Outline"
+          "title": "大纲"
         }
       }
     ],
-    "currentTab": 2
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
     }
   },
-  "active": "3d0851c29524f059",
+  "active": "86373f2d778b27ff",
   "lastOpenFiles": [
-    "251215尝试用其他软件写日记.md",
-    "000000句子收藏.md",
-    "251204一些集中的想法.md",
-    "251016第一天的浴中胡思.md",
-    "Untitled.base"
+    "未命名.base",
+    "一日胡思/每日N句.md",
+    "计算机八股学习笔记/一个go项目(26.01)/一个go项目.md",
+    "计算机八股学习笔记/八股/操作系统.md",
+    "计算机八股学习笔记/八股/计网预习用.md",
+    "计算机八股学习笔记/八股/数据过滤-限流算法.md",
+    "计算机八股学习笔记/八股/MySQL.md",
+    "计算机八股学习笔记/八股/草稿纸.md",
+    "计算机八股学习笔记/八股/网页服务器- Nginx.md",
+    "计算机八股学习笔记/八股/计网.md",
+    "计算机八股学习笔记/一个go项目(26.01)",
+    "计算机八股学习笔记/八股",
+    "计算机八股学习笔记",
+    "代码切换速查/cpp.md",
+    "代码切换速查/菜鸟java超浓缩.md",
+    "代码切换速查/java.md",
+    "代码切换速查/菜鸟go超浓缩.md",
+    "代码切换速查/csharp.md",
+    "代码切换速查",
+    "一日胡思/句子收藏.md",
+    "一日胡思/发散思考.md",
+    "一日胡思/关于我小时候的一些奇怪细节.md",
+    "一日胡思",
+    "README.md",
+    "随记/Windows的系统保留端口.md",
+    "随记/记一次重装系统后的Git安装认证使用记录.md",
+    "随记/Github远程推送-SSH秘钥证书添加.md",
+    "随记/给自家NAS搞内网穿透.md",
+    "随记/github-PermissionDenied(publickey).md",
+    "随记/常用linux指令之怎么记.md",
+    "随记",
+    "Chat With GPT/C#学习笔记/析构函数-Disposed().md",
+    "Chat With GPT/C#学习笔记",
+    "Chat With GPT/C++学习笔记",
+    "Chat With GPT"
   ]
 }
